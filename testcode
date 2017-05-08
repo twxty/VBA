@@ -1,0 +1,19 @@
+Function LastRow(RangeToCheck As Range)
+
+    If RangeToCheck.Row > 1 Then
+        LastRow = RangeToCheck.End(xlUp).Row
+    Else
+        LastRow = Cells(Cells.Rows.Count, RangeToCheck.Column).End(xlUp).Row
+    End If
+
+End Function
+
+Function LastColumn(RangeToCheck As Range)
+
+    If RangeToCheck.Column > 1 Then
+        LastColumn = RangeToCheck.End(xlToLeft).Column
+    Else
+        LastColumn = Cells(RangeToCheck.Row, Cells.Columns.Count).End(xlToLeft).Column
+    End If
+
+End Function
